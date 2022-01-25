@@ -1,0 +1,28 @@
+/* GLOBAL SASS STYLES HERE */
+
+html {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	//background-color: #fff;
+	position: relative;
+
+}
+
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+#svg {
+	position: absolute;
+	z-index: 1;
+}

@@ -1,0 +1,44 @@
+{
+  "name": "utibron-seebri-now-available-banners",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "core-util-is": "^1.0.2",
+    "gulp-gm": "^0.0.8",
+    "gulp-watch": "^4.3.11"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "event-stream": "^3.3.4",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-banners-screenshots": "^1.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-header": "^1.8.9",
+    "gulp-hub": "^4.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-tinypng": "^1.0.2",
+    "gulp-tinypng-compress": "^1.2.5",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "gulp-zip": "^5.0.1",
+    "gulp.spritesmith": "^6.11.0",
+    "gutil": "^1.6.4",
+    "merge-stream": "^1.0.1",
+    "node-sass": "^4.14.1",
+    "run-sequence": "^2.1.0",
+    "yargs": "^8.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

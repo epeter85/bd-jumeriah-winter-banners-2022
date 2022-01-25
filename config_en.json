@@ -1,0 +1,37 @@
+{
+  "dest": {
+    "build": "./build",
+    "package": "./package"
+  },
+  "groups": {
+    "altSuffix": "",
+    "name": {
+      "v1": 0
+    },
+    "useGroups": true
+  },
+  "creatives": [
+    {
+      "name": "romance-en",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        }
+      ]
+    }
+  ],
+  "URL": [
+    {
+      "name": "clickTag",
+      "url": "https://www.jumeirah.com/",
+      "country": ""
+    }
+  ],
+  "ad": {
+    "name": "Jumeriah"
+  },
+  "JSVars": {
+    "isiAutoscrollDelay": 3000
+  }
+}
