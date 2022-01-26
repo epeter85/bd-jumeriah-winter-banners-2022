@@ -16,7 +16,7 @@ function mainInit() {
   //stage.style.border = '1px solid #979797';
 
   //Backgrounds
-  main_image = generateSprite("images/main_image.jpg", 353, 287);
+  main_image = generateSprite("images/main_image.jpg", 189, 603);
   stage.appendChild(main_image);
   main_image.style.willChange = "transform";
 
@@ -61,7 +61,7 @@ function init() {
   gsap.set(replay_hit, { bottom: 0, right: 0, opacity: 0.5 });
 
   //set init placement
-  gsap.set(main_image, { x: -33, y: -20, scale: 1 });
+  gsap.set(main_image, { x: -20, y: 0, scale: 1 });
 
   frame00();
 }
@@ -72,19 +72,14 @@ function frame00() {
 
   var masterTimeline = gsap.timeline();
 
-  masterTimeline
-    .to(stage, 0.25, { opacity: 1 }, "master+=.25")
-
-    .call(frame01, null, "master+=.5")
-    .call(frame02, null, "master+=2.5")
-    .call(resolve, null, "master+=6");
+  masterTimeline.to(stage, 0.25, { opacity: 1 }, "master+=.25").call(frame01, null, "master+=.5").call(frame02, null, "master+=2.5").call(resolve, null, "master+=6");
 
   bannerDuration = 7.5;
 }
 
 function frame01() {
   var fr1 = gsap.timeline();
-  fr1.to(main_image, { duration: bannerDuration, x: -18, y: -10, scale: 1, ease: panEaseStyle }, "fr1");
+  fr1.to(main_image, { duration: bannerDuration, x: -5, y: 0, scale: 1, ease: panEaseStyle }, "fr1");
 }
 
 function frame02() {
