@@ -1,147 +1,45 @@
 {
-	"dest": {
-		"build": "./build",
-		"package": "./package"
-	},
-	"groups": {
-		"altSuffix": "",
-		"name": {
-			"v1": 0
-		},
-		"useGroups": true
-	},
-	"creatives": [{
-			"name": "al-naseem-ru",
-			"sizes": [
-				{
-					"width": 300,
-					"height": 250
-				},
-				{
-					"width": 728,
-					"height": 90
-				},
-				{
-					"width": 160,
-					"height": 600
-				}
-			]
-		},
-		{
-			"name": "al-qasr-ru",
-			"sizes": [
-				{
-					"width": 300,
-					"height": 250
-				},
-				{
-					"width": 728,
-					"height": 90
-				},
-				{
-					"width": 160,
-					"height": 600
-				}
-			]
-		},
-		{
-			"name": "beach-ru",
-			"sizes": [
-				{
-					"width": 300,
-					"height": 250
-				},
-				{
-					"width": 728,
-					"height": 90
-				},
-				{
-					"width": 160,
-					"height": 600
-				}
-			]
-		},
-		{
-			"name": "burj-ru",
-			"sizes": [
-				{
-					"width": 300,
-					"height": 250
-				},
-				{
-					"width": 728,
-					"height": 90
-				},
-				{
-					"width": 160,
-					"height": 600
-				}
-			]
-		},
-		{
-			"name": "dar-al-masyaf-ru",
-			"sizes": [
-				{
-					"width": 300,
-					"height": 250
-				},
-				{
-					"width": 728,
-					"height": 90
-				},
-				{
-					"width": 160,
-					"height": 600
-				}
-			]
-		},
-		{
-			"name": "emirates-towers-ru",
-			"sizes": [
-				{
-					"width": 300,
-					"height": 250
-				},
-				{
-					"width": 728,
-					"height": 90
-				},
-				{
-					"width": 160,
-					"height": 600
-				}
-			]
-		},
-		{
-			"name": "mina-a-salam-ru",
-			"sizes": [
-				{
-					"width": 300,
-					"height": 250
-				},
-				{
-					"width": 728,
-					"height": 90
-				},
-				{
-					"width": 160,
-					"height": 600
-				}
-			]
-		}
-	],
-	"URL": [{
-			"name": "clickTag",
-			"url": "https://www.jumeirah.com/ru",
-			"country":""
-		}
-
-	],
-	"ad": {
-		"name": "Jumeriah"
-	},
-	"JSVars": {
-		"isiAutoscrollDelay": 3000
-	}
-
+  "dest": {
+    "build": "./build",
+    "package": "./package"
+  },
+  "groups": {
+    "altSuffix": "",
+    "name": {
+      "v1": 0
+    },
+    "useGroups": true
+  },
+  "creatives": [
+    {
+      "name": "romance-ru",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    }
+  ],
+  "URL": [
+    {
+      "name": "clickTag",
+      "url": "https://www.jumeirah.com/ru",
+      "country": ""
+    }
+  ],
+  "ad": {
+    "name": "Jumeriah"
+  },
+  "JSVars": {
+    "isiAutoscrollDelay": 3000
+  }
 }

@@ -1,0 +1,96 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-copy1 {
+  background-image: url(../images/sprite.png);
+  background-position: -1200px -500px;
+  width: 600px;
+  height: 500px;
+}
+.icon-copy2 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -1000px;
+  width: 600px;
+  height: 500px;
+}
+.icon-copy3 {
+  background-image: url(../images/sprite.png);
+  background-position: -600px -1000px;
+  width: 600px;
+  height: 500px;
+}
+.icon-cta {
+  background-image: url(../images/sprite.png);
+  background-position: -2037px -1000px;
+  width: 237px;
+  height: 39px;
+}
+.icon-logo1 {
+  background-image: url(../images/sprite.png);
+  background-position: -1200px -1000px;
+  width: 600px;
+  height: 500px;
+}
+.icon-logo2 {
+  background-image: url(../images/sprite.png);
+  background-position: -1800px 0px;
+  width: 600px;
+  height: 500px;
+}
+.icon-replay {
+  background-image: url(../images/sprite.png);
+  background-position: -1800px -500px;
+  width: 600px;
+  height: 500px;
+}
+.icon-copy1 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px 0px;
+  width: 600px;
+  height: 500px;
+}
+.icon-copy2 {
+  background-image: url(../images/sprite.png);
+  background-position: -600px 0px;
+  width: 600px;
+  height: 500px;
+}
+.icon-copy3 {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -500px;
+  width: 600px;
+  height: 500px;
+}
+.icon-cta {
+  background-image: url(../images/sprite.png);
+  background-position: -1800px -1000px;
+  width: 237px;
+  height: 39px;
+}
+.icon-logo1 {
+  background-image: url(../images/sprite.png);
+  background-position: -600px -500px;
+  width: 600px;
+  height: 500px;
+}
+.icon-logo2 {
+  background-image: url(../images/sprite.png);
+  background-position: -1200px 0px;
+  width: 600px;
+  height: 500px;
+}
