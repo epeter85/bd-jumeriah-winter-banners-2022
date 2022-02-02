@@ -161,34 +161,35 @@ init();
 /* GLOBAL MAIN JS FOR BANNER CREATIVES */
 
 function enableRollOvers() {
-
-    rollover_hit.addEventListener("mouseover", function () {
-        gsap.to(cta, .33, {
-            scale:.55,
-            force3D: false,
-            rotation:0.1,
-            ease: Power1.easeIn
-        })
+  rollover_hit.addEventListener('mouseover', function () {
+    //cta.style.willChange = 'transform';
+    gsap.to(cta, 0.33, {
+      scale: 0.55,
+      force3D: false,
+      rotation: 0.1,
+      ease: Power1.easeIn,
     });
-    
-    rollover_hit.addEventListener("mouseout", function () {
-        gsap.to(cta, .33, {
-            scale:.5,
-            force3D: false,
-            rotation:0.1,
-            ease: Power1.easeOut
-        })
+  });
+
+  rollover_hit.addEventListener('mouseout', function () {
+    //cta.style.willChange = 'auto';
+    gsap.to(cta, 0.33, {
+      scale: 0.5,
+      force3D: false,
+      rotation: 0.1,
+      ease: Power1.easeOut,
     });
+  });
 
-    if (typeof replay_hit != 'undefined') {
-
-        replay_hit.addEventListener('click', function (e) {
-            e.stopPropagation()
-            e.preventDefault()
-            init();
-        })
-    }
+  if (typeof replay_hit != 'undefined') {
+    replay_hit.addEventListener('click', function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      init();
+    });
+  }
 }
+
 function mainInit() {
   ///////////////////////////////
   //set up sprites and containers
@@ -230,7 +231,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite("images/template/f3.jpg");
+  // template = generateSprite('images/backup.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 
@@ -265,6 +266,7 @@ function frame00() {
 
   masterTimeline
     .to(stage, 0.25, { opacity: 1 }, 'master+=.25')
+    //.call(resolve, null, 'master+=.5');
     .call(frame01, null, 'master+=.5')
     .call(frame02, null, 'master+=2.5')
     .call(resolve, null, 'master+=6');
@@ -274,7 +276,11 @@ function frame00() {
 
 function frame01() {
   var fr1 = gsap.timeline();
-  fr1.to(main_image, { duration: bannerDuration, x: 10, y: 5, scale: 1.1, ease: panEaseStyle }, 'fr1');
+  fr1.to(
+    main_image,
+    { duration: bannerDuration, x: 10, y: 5, scale: 1.1, ease: panEaseStyle },
+    'fr1'
+  );
 }
 
 function frame02() {

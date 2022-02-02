@@ -39,7 +39,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite("images/template/f3.jpg");
+  // template = generateSprite('images/backup.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 
@@ -74,6 +74,7 @@ function frame00() {
 
   masterTimeline
     .to(stage, 0.25, { opacity: 1 }, 'master+=.25')
+    //.call(resolve, null, 'master+=.5');
     .call(frame01, null, 'master+=.5')
     .call(frame02, null, 'master+=2.5')
     .call(resolve, null, 'master+=6');
@@ -83,7 +84,11 @@ function frame00() {
 
 function frame01() {
   var fr1 = gsap.timeline();
-  fr1.to(main_image, { duration: bannerDuration, x: 10, y: 5, scale: 1.1, ease: panEaseStyle }, 'fr1');
+  fr1.to(
+    main_image,
+    { duration: bannerDuration, x: 10, y: 5, scale: 1.1, ease: panEaseStyle },
+    'fr1'
+  );
 }
 
 function frame02() {

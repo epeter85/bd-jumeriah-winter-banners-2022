@@ -79,7 +79,9 @@ function sprite() {
       );
 
       let cssStream = spriteData.css.pipe(
-        gulp.dest('./src/creatives/' + creative.name + '/' + currentSize + '/sass')
+        gulp.dest(
+          './src/creatives/' + creative.name + '/' + currentSize + '/sass'
+        )
       );
 
       ms.push(imgStream, cssStream);
@@ -98,9 +100,13 @@ function tinyPNG() {
       let currentSize = size.width + 'x' + size.height;
 
       let spriteMinify = gulp
-        .src(des + '/' + creative.name + '/' + currentSize + '/images/sprite.png')
+        .src(
+          des + '/' + creative.name + '/' + currentSize + '/images/sprite.png'
+        )
         .pipe(tinypng('W4hvzCmPFZ271xhxMbKsVV7FPlxpXnCL'))
-        .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/'));
+        .pipe(
+          gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')
+        );
 
       ms.push(spriteMinify);
     });
@@ -124,7 +130,13 @@ function sassIt() {
 
       // assign the entire stream to a variable
       let m = gulp
-        .src('./src/creatives/' + creative.name + '/' + currentSize + '/sass/style.scss')
+        .src(
+          './src/creatives/' +
+            creative.name +
+            '/' +
+            currentSize +
+            '/sass/style.scss'
+        )
 
         // use gulp-header to inject sass variables at the top of the sass file
         .pipe(
@@ -144,7 +156,9 @@ function sassIt() {
 
         // minify the css file
         .pipe(gulpif(isProduction, cssnano()))
-        .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/css/'));
+        .pipe(
+          gulp.dest(des + '/' + creative.name + '/' + currentSize + '/css/')
+        );
 
       // push the stream variable into the array
       ms.push(m);
@@ -177,19 +191,31 @@ function images() {
           )
           .pipe(gulpif(isProduction, imagemin()))
           .pipe(rename({ dirname: '' }))
-          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')),
+          .pipe(
+            gulp.dest(
+              des + '/' + creative.name + '/' + currentSize + '/images/'
+            )
+          ),
 
         // non-grouped images
         gulp
           .src('./src/global/images/' + currentSize + '*.+(jpg|gif|png|svg)')
           .pipe(gulpif(isProduction, imagemin()))
-          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')),
+          .pipe(
+            gulp.dest(
+              des + '/' + creative.name + '/' + currentSize + '/images/'
+            )
+          ),
 
         // global images
         gulp
           .src('./src/global/images/' + '*.+(jpg|gif|png|svg)')
           .pipe(gulpif(isProduction, imagemin()))
-          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')),
+          .pipe(
+            gulp.dest(
+              des + '/' + creative.name + '/' + currentSize + '/images/'
+            )
+          ),
 
         //copy templates over to build
         gulp
@@ -205,7 +231,9 @@ function images() {
           .pipe(
             gulpif(
               !isProduction,
-              gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')
+              gulp.dest(
+                des + '/' + creative.name + '/' + currentSize + '/images/'
+              )
             )
           )
       );
@@ -229,7 +257,9 @@ function fonts() {
         gulp
           .src('./src/global/fonts/' + '*.+(woff|woff2)')
           .pipe(gulpif(isProduction, imagemin()))
-          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/fonts/'))
+          .pipe(
+            gulp.dest(des + '/' + creative.name + '/' + currentSize + '/fonts/')
+          )
       );
       ms.push(m);
     });
@@ -257,7 +287,9 @@ function pugIt() {
       console.log(YOUR_LOCALS.url_links);
       let currentSize = size.width + 'x' + size.height;
       let m = gulp
-        .src('./src/creatives/' + creative.name + '/' + currentSize + '/pug/*.pug')
+        .src(
+          './src/creatives/' + creative.name + '/' + currentSize + '/pug/*.pug'
+        )
         .pipe(
           pug({
             locals: YOUR_LOCALS,
@@ -292,9 +324,13 @@ function js() {
         .src(jsSources)
         .pipe(concat('main.js'))
         .pipe(header('var config = ' + JSON.stringify(config.JSVars) + ';\n'))
-        .pipe(header('var isProduction = ' + JSON.stringify(isProduction) + ';\n'))
+        .pipe(
+          header('var isProduction = ' + JSON.stringify(isProduction) + ';\n')
+        )
         //.pipe(gulpif(isProduction, uglify()))
-        .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/js/'));
+        .pipe(
+          gulp.dest(des + '/' + creative.name + '/' + currentSize + '/js/')
+        );
 
       // let n = es.merge(
       // 	// global js packages
@@ -326,7 +362,10 @@ function zipFolders() {
       ms.push(zipFolders);
     });
 
-    let staticBanners = gulp.src('./static/**/*').pipe(zip('statics.zip')).pipe(gulp.dest(des));
+    let staticBanners = gulp
+      .src('./static/**/*')
+      .pipe(zip('statics.zip'))
+      .pipe(gulp.dest(des));
 
     ms.push(staticBanners);
   });
