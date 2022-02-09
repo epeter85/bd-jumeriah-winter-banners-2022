@@ -247,8 +247,8 @@ function mainInit() {
 
 function init() {
   //set init visibility
-  gsap.set([main_image, logo1, cta, copy1], { opacity: 1 });
-  gsap.set([logo2, copy2, copy3, replay], { opacity: 0 });
+  gsap.set([main_image, logo1, cta, copy3], { opacity: 1 });
+  //gsap.set([logo2, copy2, copy3, replay], { opacity: 0 });
   gsap.set(cta, { rotationZ: 0.01 });
   gsap.set(replay_hit, { bottom: 0, right: 0, opacity: 0.5 });
 
@@ -285,17 +285,17 @@ function frame01() {
 function frame02() {
   var fr3 = gsap.timeline();
 
-  fr3
-    .to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2')
-    .to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
+  // fr3
+  //   .to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2')
+  //   .to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
 }
 
 function resolve() {
   var resolve = gsap.timeline();
   resolve
-    .to([copy2, logo1], 0.75, { opacity: 0, ease: easeStyle }, 'resolve')
-    .to(logo2, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=1')
-    .to(copy3, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=1')
+    //.to([copy2, logo1], 0.75, { opacity: 0, ease: easeStyle }, 'resolve')
+    //.to(logo2, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=1')
+    //.to(copy3, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=1')
     .to(replay, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=2')
     .call(enableRollOvers, null, 'resolve+=1');
 }
