@@ -39,7 +39,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite("images/template/f3.jpg");
+  // template = generateSprite('images/backup.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 
@@ -55,7 +55,7 @@ function mainInit() {
 
 function init() {
   //set init visibility
-  gsap.set([main_image, logo1, cta, copy3], { opacity: 1 });
+  gsap.set([main_image, logo2, cta, copy3], { opacity: 1 });
   //gsap.set([logo2, copy2, copy3, replay], { opacity: 0 });
   gsap.set(cta, { rotationZ: 0.01 });
   gsap.set(replay_hit, { bottom: 0, right: 0, opacity: 0.5 });
@@ -85,7 +85,7 @@ function frame01() {
   var fr1 = gsap.timeline();
   fr1.to(
     main_image,
-    { duration: bannerDuration, x: -5, y: 0, scale: 1, ease: panEaseStyle },
+    { duration: bannerDuration, x: 15, y: 5, scale: 1.1, ease: panEaseStyle },
     'fr1'
   );
 }
