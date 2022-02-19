@@ -27,6 +27,32 @@
           "height": 600
         }
       ]
+    },
+    {
+      "name": "city-break-en",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        }
+      ]
+    },
+    {
+      "name": "ramadan-en",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
     }
   ],
   "URL": [
