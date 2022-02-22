@@ -18,19 +18,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .icon-copy1 {
   background-image: url(../images/sprite.png);
-  background-position: 0px -360px;
+  background-position: 0px 0px;
   width: 1456px;
   height: 180px;
 }
 .icon-copy2 {
   background-image: url(../images/sprite.png);
-  background-position: 0px -540px;
+  background-position: 0px -180px;
   width: 1456px;
   height: 180px;
 }
 .icon-copy3 {
   background-image: url(../images/sprite.png);
-  background-position: 0px -720px;
+  background-position: 0px -360px;
   width: 1456px;
   height: 180px;
 }
@@ -42,19 +42,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-replay {
   background-image: url(../images/sprite.png);
-  background-position: 0px -900px;
+  background-position: 0px -540px;
   width: 1456px;
   height: 180px;
 }
 .icon-logo1 {
   background-image: url(../images/sprite.png);
-  background-position: 0px 0px;
+  background-position: 0px -720px;
   width: 1456px;
   height: 180px;
 }
 .icon-logo2 {
   background-image: url(../images/sprite.png);
-  background-position: 0px -180px;
+  background-position: 0px -900px;
   width: 1456px;
   height: 180px;
 }
