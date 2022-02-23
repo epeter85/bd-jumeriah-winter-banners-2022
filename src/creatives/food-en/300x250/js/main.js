@@ -4,31 +4,31 @@ function mainInit() {
   ///////////////////////////////
 
   //setup stage
-  stage = document.querySelectorAll(".container")[0];
-  stage.style.width = dimensions.width + "px";
-  stage.style.height = dimensions.height + "px";
-  stage.style.overflow = "hidden";
-  stage.style.position = "absolute";
-  stage.style.display = "none";
+  stage = document.querySelectorAll('.container')[0];
+  stage.style.width = dimensions.width + 'px';
+  stage.style.height = dimensions.height + 'px';
+  stage.style.overflow = 'hidden';
+  stage.style.position = 'absolute';
+  stage.style.display = 'none';
   stage.style.opacity = 0;
-  stage.style.filter = "alpha(opacity=0)";
+  stage.style.filter = 'alpha(opacity=0)';
   stage.style.zIndex = 2;
   //stage.style.border = '1px solid #979797';
 
   //Backgrounds
-  main_image = generateSprite("images/main_image.jpg", 353, 287);
+  main_image = generateSprite('images/main_image.jpg', 305, 261);
   stage.appendChild(main_image);
-  main_image.style.willChange = "transform";
+  main_image.style.willChange = 'transform';
 
-  copy1 = addSprite("icon-copy1");
-  copy2 = addSprite("icon-copy2");
-  copy3 = addSprite("icon-copy3");
+  copy1 = addSprite('icon-copy1');
+  copy2 = addSprite('icon-copy2');
+  copy3 = addSprite('icon-copy3');
 
-  logo1 = addSprite("icon-logo1");
-  logo2 = addSprite("icon-logo2");
-  cta = addSprite("icon-cta");
+  logo1 = addSprite('icon-logo1');
+  logo2 = addSprite('icon-logo2');
+  cta = addSprite('icon-cta');
   cta.style.zIndex = 2;
-  replay = addSprite("icon-replay");
+  replay = addSprite('icon-replay');
 
   rollover_hit = generateContainer();
   stage.appendChild(rollover_hit);
@@ -39,7 +39,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite("images/template/f3.jpg");
+  // template = generateSprite('images/template/300x250_F3.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 
@@ -48,7 +48,7 @@ function mainInit() {
   textSlideEaseSyle = Quint.easeOut;
 
   panEaseStyle = Linear.easeInOut;
-  lineEaseStyle = "none";
+  lineEaseStyle = 'none';
 
   easeSpeed = 0.5;
 }
@@ -61,39 +61,50 @@ function init() {
   gsap.set(replay_hit, { bottom: 0, right: 0, opacity: 0.5 });
 
   //set init placement
-  gsap.set(main_image, { x: -33, y: -20, scale: 1 });
+  gsap.set(main_image, { x: 0, y: 0, scale: 1 });
 
   frame00();
 }
 
 function frame00() {
   stopWatch = new Date().getTime();
-  stage.style.display = "block";
+  stage.style.display = 'block';
 
   var masterTimeline = gsap.timeline();
 
   masterTimeline
-    .to(stage, 0.25, { opacity: 1 }, "master+=.25")
+    .to(stage, 0.25, { opacity: 1 }, 'master+=.25')
 
-    .call(frame01, null, "master+=.5")
-    .call(frame02, null, "master+=2.5")
-    .call(resolve, null, "master+=6");
+    .call(frame01, null, 'master+=.5')
+    .call(frame02, null, 'master+=2.5')
+    .call(resolve, null, 'master+=6');
 
   bannerDuration = 7.5;
 }
 
 function frame01() {
   var fr1 = gsap.timeline();
-  fr1.to(main_image, { duration: bannerDuration, x: -18, y: -10, scale: 1, ease: panEaseStyle }, "fr1");
+  fr1.to(
+    main_image,
+    { duration: bannerDuration, x: 0, y: -10, scale: 1, ease: panEaseStyle },
+    'fr1'
+  );
 }
 
 function frame02() {
   var fr3 = gsap.timeline();
 
-  fr3.to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, "fr2").to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, "fr2+=.5");
+  fr3
+    .to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2')
+    .to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
 }
 
 function resolve() {
   var resolve = gsap.timeline();
-  resolve.to([copy2, logo1], 0.75, { opacity: 0, ease: easeStyle }, "resolve").to(logo2, easeSpeed, { opacity: 1, ease: easeStyle }, "resolve+=1").to(copy3, easeSpeed, { opacity: 1, ease: easeStyle }, "resolve+=1").to(replay, easeSpeed, { opacity: 1, ease: easeStyle }, "resolve+=2").call(enableRollOvers, null, "resolve+=1");
+  resolve
+    .to([copy2, logo1], 0.75, { opacity: 0, ease: easeStyle }, 'resolve')
+    .to(logo2, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=1')
+    .to(copy3, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=1')
+    .to(replay, easeSpeed, { opacity: 1, ease: easeStyle }, 'resolve+=2')
+    .call(enableRollOvers, null, 'resolve+=1');
 }

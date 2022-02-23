@@ -208,7 +208,7 @@ function mainInit() {
   //stage.style.border = '1px solid #979797';
 
   //Backgrounds
-  main_image = generateSprite('images/main_image.jpg', 163, 612);
+  main_image = generateSprite('images/main_image.jpg', 228, 614);
   stage.appendChild(main_image);
   main_image.style.willChange = 'transform';
 
@@ -253,7 +253,7 @@ function init() {
   gsap.set(replay_hit, { bottom: 0, right: 0, opacity: 0.5 });
 
   //set init placement
-  gsap.set(main_image, { x: 0, y: 0, scale: 1 });
+  gsap.set(main_image, { x: -50, y: 0, scale: 1 });
 
   frame00();
 }
@@ -277,7 +277,7 @@ function frame01() {
   var fr1 = gsap.timeline();
   fr1.to(
     main_image,
-    { duration: bannerDuration, x: 0, y: -10, scale: 1, ease: panEaseStyle },
+    { duration: bannerDuration, x: -20, y: 0, scale: 1, ease: panEaseStyle },
     'fr1'
   );
 }

@@ -16,7 +16,7 @@ function mainInit() {
   //stage.style.border = '1px solid #979797';
 
   //Backgrounds
-  main_image = generateSprite('images/main_image.jpg', 189, 603);
+  main_image = generateSprite('images/main_image.jpg', 185, 603);
   stage.appendChild(main_image);
   main_image.style.willChange = 'transform';
 
@@ -39,7 +39,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite("images/template/f3.jpg");
+  // template = generateSprite('images/template/160x600_F3.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 

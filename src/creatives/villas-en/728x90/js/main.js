@@ -16,7 +16,7 @@ function mainInit() {
   //stage.style.border = '1px solid #979797';
 
   //Backgrounds
-  main_image = generateSprite('images/main_image.jpg', 730, 103);
+  main_image = generateSprite('images/main_image.jpg', 733, 100);
   stage.appendChild(main_image);
   main_image.style.willChange = 'transform';
 
@@ -39,7 +39,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite("images/template/f3.jpg");
+  // template = generateSprite('images/template/728x90_F3.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 
@@ -61,7 +61,7 @@ function init() {
   gsap.set(replay_hit, { bottom: 0, right: 0, opacity: 0.5 });
 
   //set init placement
-  gsap.set(main_image, { x: -10, y: -5, scale: 1.1 });
+  gsap.set(main_image, { x: 0, y: -10, scale: 1 });
 
   frame00();
 }
@@ -83,7 +83,11 @@ function frame00() {
 
 function frame01() {
   var fr1 = gsap.timeline();
-  fr1.to(main_image, { duration: bannerDuration, x: 10, y: 5, scale: 1.1, ease: panEaseStyle }, 'fr1');
+  fr1.to(
+    main_image,
+    { duration: bannerDuration, x: -5, y: 0, scale: 1, ease: panEaseStyle },
+    'fr1'
+  );
 }
 
 function frame02() {

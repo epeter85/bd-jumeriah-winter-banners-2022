@@ -63,7 +63,75 @@
       ]
     },
     {
+      "name": "food-en",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "name": "masterbrand-en",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
       "name": "ramadan-en",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "name": "villas-en",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "name": "wellness-en",
       "sizes": [
         {
           "width": 300,
