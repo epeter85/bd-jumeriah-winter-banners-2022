@@ -18,19 +18,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .icon-copy1 {
   background-image: url(../images/sprite.png);
-  background-position: -600px -500px;
+  background-position: -1200px -500px;
   width: 600px;
   height: 500px;
 }
 .icon-copy2 {
   background-image: url(../images/sprite.png);
-  background-position: -1200px 0px;
+  background-position: 0px -1000px;
   width: 600px;
   height: 500px;
 }
 .icon-copy3 {
   background-image: url(../images/sprite.png);
-  background-position: -1200px -500px;
+  background-position: -600px -1000px;
   width: 600px;
   height: 500px;
 }
@@ -42,19 +42,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-logo1 {
   background-image: url(../images/sprite.png);
-  background-position: 0px -1000px;
+  background-position: -1200px -1000px;
   width: 600px;
   height: 500px;
 }
 .icon-logo2 {
   background-image: url(../images/sprite.png);
-  background-position: -600px -1000px;
+  background-position: -1800px 0px;
   width: 600px;
   height: 500px;
 }
 .icon-replay {
   background-image: url(../images/sprite.png);
-  background-position: -1200px -1000px;
+  background-position: -1800px -500px;
   width: 600px;
   height: 500px;
 }
@@ -84,13 +84,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-logo1 {
   background-image: url(../images/sprite.png);
-  background-position: -1800px 0px;
+  background-position: -600px -500px;
   width: 600px;
   height: 500px;
 }
 .icon-logo2 {
   background-image: url(../images/sprite.png);
-  background-position: -1800px -500px;
+  background-position: -1200px 0px;
   width: 600px;
   height: 500px;
 }

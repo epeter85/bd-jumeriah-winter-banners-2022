@@ -1,0 +1,37 @@
+// transform sprites for retina x2
+// refer to sprite.scss file for class name for all sprites generated from Sprite Smith
+// 
+
+/* Adjustsments here for banner sizes*/
+$banner-width: 300px;
+$banner-height: 250px;
+
+.icon-copy1,
+.icon-copy2,
+.icon-copy3,
+.icon-replay,
+.icon-logo1,
+.icon-logo2,
+.icon-replay  {
+
+  -ms-transform: scale(.5, .5);
+  -webkit-transform: scale(.5, .5);
+  -moz-transform: scale(.5, .5);
+  -o-transform: scale(.5, .5);
+  transform: scale(.5, .5);
+
+  top: -($banner-height/2);
+  left: -($banner-width/2);
+
+}
+
+.icon-cta {
+  -ms-transform: scale(.5, .5);
+  -webkit-transform: scale(.5, .5);
+  -moz-transform: scale(.5, .5);
+  -o-transform: scale(.5, .5);
+  transform: scale(.5, .5);
+
+  bottom: 34px;
+  left:32px;
+}
