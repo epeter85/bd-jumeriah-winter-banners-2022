@@ -12,7 +12,7 @@
   },
   "creatives": [
     {
-      "name": "romance-fr",
+      "name": "city-break-fr",
       "sizes": [
         {
           "width": 300,
@@ -30,6 +30,23 @@
     },
     {
       "name": "masterbrand-fr",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "name": "romance-fr",
       "sizes": [
         {
           "width": 300,
