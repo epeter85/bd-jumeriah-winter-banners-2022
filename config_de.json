@@ -95,6 +95,40 @@
           "height": 600
         }
       ]
+    },
+    {
+      "name": "villas-de",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "name": "wellness-de",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
     }
   ],
   "URL": [

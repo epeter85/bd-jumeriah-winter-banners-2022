@@ -80,6 +80,23 @@
       ]
     },
     {
+      "name": "ramadan-ar",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
       "name": "romance-ar",
       "sizes": [
         {
@@ -97,7 +114,24 @@
       ]
     },
     {
-      "name": "ramadan-ar",
+      "name": "villas-ar",
+      "sizes": [
+        {
+          "width": 300,
+          "height": 250
+        },
+        {
+          "width": 728,
+          "height": 90
+        },
+        {
+          "width": 160,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "name": "wellness-ar",
       "sizes": [
         {
           "width": 300,

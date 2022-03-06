@@ -30,7 +30,7 @@ gulp.registry(hub);
 // hub.currentCreative = 'v1';
 // hub.currentSize = '728x90';
 
-var config = JSON.parse(fs.readFileSync('./config_fr.json'));
+var config = JSON.parse(fs.readFileSync('./config_de.json'));
 var isProduction = false;
 var des = config.dest.build;
 var bannerName = config.ad.name;
@@ -57,32 +57,17 @@ function sprite() {
     sizes.forEach(function (size) {
       let currentSize = size.width + 'x' + size.height;
 
-      let spriteData = gulp
-        .src(
-          './src/creatives/' +
-            creative.name +
-            '/' +
-            currentSize +
-            '/assets/*-assets/sprite/' +
-            '*.+(png)'
-        )
-        .pipe(
-          spritesmith({
-            imgName: '../images/sprite.png',
-            cssName: '_sprite.scss',
-            cssFormat: 'css',
-          })
-        );
-
-      let imgStream = spriteData.img.pipe(
-        gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')
+      let spriteData = gulp.src('./src/creatives/' + creative.name + '/' + currentSize + '/assets/*-assets/sprite/' + '*.+(png)').pipe(
+        spritesmith({
+          imgName: '../images/sprite.png',
+          cssName: '_sprite.scss',
+          cssFormat: 'css',
+        })
       );
 
-      let cssStream = spriteData.css.pipe(
-        gulp.dest(
-          './src/creatives/' + creative.name + '/' + currentSize + '/sass'
-        )
-      );
+      let imgStream = spriteData.img.pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/'));
+
+      let cssStream = spriteData.css.pipe(gulp.dest('./src/creatives/' + creative.name + '/' + currentSize + '/sass'));
 
       ms.push(imgStream, cssStream);
     });
@@ -100,13 +85,9 @@ function tinyPNG() {
       let currentSize = size.width + 'x' + size.height;
 
       let spriteMinify = gulp
-        .src(
-          des + '/' + creative.name + '/' + currentSize + '/images/sprite.png'
-        )
+        .src(des + '/' + creative.name + '/' + currentSize + '/images/sprite.png')
         .pipe(tinypng('W4hvzCmPFZ271xhxMbKsVV7FPlxpXnCL'))
-        .pipe(
-          gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')
-        );
+        .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/'));
 
       ms.push(spriteMinify);
     });
@@ -130,35 +111,17 @@ function sassIt() {
 
       // assign the entire stream to a variable
       let m = gulp
-        .src(
-          './src/creatives/' +
-            creative.name +
-            '/' +
-            currentSize +
-            '/sass/style.scss'
-        )
+        .src('./src/creatives/' + creative.name + '/' + currentSize + '/sass/style.scss')
 
         // use gulp-header to inject sass variables at the top of the sass file
-        .pipe(
-          header(
-            "$size: '" +
-              String(currentSize) +
-              "'; $creative: '" +
-              creative.name +
-              "'; $isProduction:" +
-              isProduction +
-              ';\n'
-          )
-        )
+        .pipe(header("$size: '" + String(currentSize) + "'; $creative: '" + creative.name + "'; $isProduction:" + isProduction + ';\n'))
 
         // cover your ass?
         .pipe(sass().on('error', sass.logError))
 
         // minify the css file
         .pipe(gulpif(isProduction, cssnano()))
-        .pipe(
-          gulp.dest(des + '/' + creative.name + '/' + currentSize + '/css/')
-        );
+        .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/css/'));
 
       // push the stream variable into the array
       ms.push(m);
@@ -181,61 +144,28 @@ function images() {
       let m = es.merge(
         // grouped images
         gulp
-          .src(
-            './src/creatives/' +
-              creative.name +
-              '/' +
-              currentSize +
-              '/assets/*-assets/' +
-              '*.+(jpg|gif|png|svg)'
-          )
+          .src('./src/creatives/' + creative.name + '/' + currentSize + '/assets/*-assets/' + '*.+(jpg|gif|png|svg)')
           .pipe(gulpif(isProduction, imagemin()))
           .pipe(rename({ dirname: '' }))
-          .pipe(
-            gulp.dest(
-              des + '/' + creative.name + '/' + currentSize + '/images/'
-            )
-          ),
+          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')),
 
         // non-grouped images
         gulp
           .src('./src/global/images/' + currentSize + '*.+(jpg|gif|png|svg)')
           .pipe(gulpif(isProduction, imagemin()))
-          .pipe(
-            gulp.dest(
-              des + '/' + creative.name + '/' + currentSize + '/images/'
-            )
-          ),
+          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')),
 
         // global images
         gulp
           .src('./src/global/images/' + '*.+(jpg|gif|png|svg)')
           .pipe(gulpif(isProduction, imagemin()))
-          .pipe(
-            gulp.dest(
-              des + '/' + creative.name + '/' + currentSize + '/images/'
-            )
-          ),
+          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')),
 
         //copy templates over to build
         gulp
-          .src(
-            './src/creatives/' +
-              creative.name +
-              '/' +
-              currentSize +
-              '/assets/*-assets/template/' +
-              '*.+(jpg|gif|png)'
-          )
+          .src('./src/creatives/' + creative.name + '/' + currentSize + '/assets/*-assets/template/' + '*.+(jpg|gif|png)')
           .pipe(gulpif(!isProduction, rename({ dirname: 'template' })))
-          .pipe(
-            gulpif(
-              !isProduction,
-              gulp.dest(
-                des + '/' + creative.name + '/' + currentSize + '/images/'
-              )
-            )
-          )
+          .pipe(gulpif(!isProduction, gulp.dest(des + '/' + creative.name + '/' + currentSize + '/images/')))
       );
       ms.push(m);
     });
@@ -257,9 +187,7 @@ function fonts() {
         gulp
           .src('./src/global/fonts/' + '*.+(woff|woff2)')
           .pipe(gulpif(isProduction, imagemin()))
-          .pipe(
-            gulp.dest(des + '/' + creative.name + '/' + currentSize + '/fonts/')
-          )
+          .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/fonts/'))
       );
       ms.push(m);
     });
@@ -287,9 +215,7 @@ function pugIt() {
       console.log(YOUR_LOCALS.url_links);
       let currentSize = size.width + 'x' + size.height;
       let m = gulp
-        .src(
-          './src/creatives/' + creative.name + '/' + currentSize + '/pug/*.pug'
-        )
+        .src('./src/creatives/' + creative.name + '/' + currentSize + '/pug/*.pug')
         .pipe(
           pug({
             locals: YOUR_LOCALS,
@@ -314,23 +240,15 @@ function js() {
 
     sizes.forEach(function (size) {
       let currentSize = size.width + 'x' + size.height;
-      let jsSources = [
-        './src/global/js/global_functions.js',
-        './src/global/js/main.js',
-        './src/creatives/' + creative.name + '/' + currentSize + '/js/main.js',
-      ];
+      let jsSources = ['./src/global/js/global_functions.js', './src/global/js/main.js', './src/creatives/' + creative.name + '/' + currentSize + '/js/main.js'];
 
       let m = gulp
         .src(jsSources)
         .pipe(concat('main.js'))
         .pipe(header('var config = ' + JSON.stringify(config.JSVars) + ';\n'))
-        .pipe(
-          header('var isProduction = ' + JSON.stringify(isProduction) + ';\n')
-        )
+        .pipe(header('var isProduction = ' + JSON.stringify(isProduction) + ';\n'))
         //.pipe(gulpif(isProduction, uglify()))
-        .pipe(
-          gulp.dest(des + '/' + creative.name + '/' + currentSize + '/js/')
-        );
+        .pipe(gulp.dest(des + '/' + creative.name + '/' + currentSize + '/js/'));
 
       // let n = es.merge(
       // 	// global js packages
@@ -362,10 +280,7 @@ function zipFolders() {
       ms.push(zipFolders);
     });
 
-    let staticBanners = gulp
-      .src('./static/**/*')
-      .pipe(zip('statics.zip'))
-      .pipe(gulp.dest(des));
+    let staticBanners = gulp.src('./static/**/*').pipe(zip('statics.zip')).pipe(gulp.dest(des));
 
     ms.push(staticBanners);
   });
@@ -407,18 +322,9 @@ function browserSyncReload(done) {
 function watchFiles() {
   gulp.watch('src/creatives/**/*.png', gulp.series(sprite, browserSyncReload));
   gulp.watch('src/global/pug/**/*.pug', gulp.series(pugIt, browserSyncReload));
-  gulp.watch(
-    ['src/global/sass/**/*.{scss,css}', 'src/creatives/**/*.{scss,css}'],
-    gulp.series(sassIt, browserSyncReload)
-  );
-  gulp.watch(
-    ['src/global/js/**/*.js', 'src/creatives/**/*.js'],
-    gulp.series(js, browserSyncReload)
-  );
-  gulp.watch(
-    ['src/global/images/**/*', 'src/creatives/**/*.jpg'],
-    gulp.series(images, browserSyncReload)
-  );
+  gulp.watch(['src/global/sass/**/*.{scss,css}', 'src/creatives/**/*.{scss,css}'], gulp.series(sassIt, browserSyncReload));
+  gulp.watch(['src/global/js/**/*.js', 'src/creatives/**/*.js'], gulp.series(js, browserSyncReload));
+  gulp.watch(['src/global/images/**/*', 'src/creatives/**/*.jpg'], gulp.series(images, browserSyncReload));
 }
 
 const build = gulp.series(cleanBuild, sprite, sassIt, images, pugIt, js);
