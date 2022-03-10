@@ -30,7 +30,7 @@ gulp.registry(hub);
 // hub.currentCreative = 'v1';
 // hub.currentSize = '728x90';
 
-var config = JSON.parse(fs.readFileSync('./config_de.json'));
+var config = JSON.parse(fs.readFileSync('./config_ar.json'));
 var isProduction = false;
 var des = config.dest.build;
 var bannerName = config.ad.name;
