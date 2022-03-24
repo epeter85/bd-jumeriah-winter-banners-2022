@@ -84,19 +84,13 @@ function frame00() {
 
 function frame01() {
   var fr1 = gsap.timeline();
-  fr1.to(
-    main_image,
-    { duration: bannerDuration, x: 10, y: 5, scale: 1.1, ease: panEaseStyle },
-    'fr1'
-  );
+  fr1.to(main_image, { duration: bannerDuration, x: 10, y: 5, scale: 1.1, ease: panEaseStyle }, 'fr1');
 }
 
 function frame02() {
   var fr3 = gsap.timeline();
 
-  fr3
-    .to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2')
-    .to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
+  fr3.to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2').to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
 }
 
 function resolve() {

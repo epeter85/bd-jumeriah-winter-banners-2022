@@ -34,12 +34,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 1456px;
   height: 180px;
 }
-.icon-cta {
-  background-image: url(../images/sprite.png);
-  background-position: 0px -1080px;
-  width: 230px;
-  height: 38px;
-}
 .icon-logo1 {
   background-image: url(../images/sprite.png);
   background-position: 0px -540px;
@@ -57,4 +51,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: 0px -900px;
   width: 1456px;
   height: 180px;
+}
+.icon-cta {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -1080px;
+  width: 219px;
+  height: 61px;
 }

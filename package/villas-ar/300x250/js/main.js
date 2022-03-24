@@ -231,7 +231,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite('images/template/300x250_F3.jpg');
+  // template = generateSprite('images/backup.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 
@@ -292,9 +292,7 @@ function frame01() {
 function frame02() {
   var fr3 = gsap.timeline();
 
-  fr3
-    .to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2')
-    .to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
+  fr3.to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2').to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
 }
 
 function resolve() {

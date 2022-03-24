@@ -231,7 +231,7 @@ function mainInit() {
   stage.appendChild(replay_hit);
   replay_hit.style.zIndex = 4;
 
-  // template = generateSprite('images/template/160x600_F3.jpg');
+  // template = generateSprite('images/backup.jpg');
   // stage.appendChild(template);
   // template.style.opacity = 0.5;
 
@@ -264,11 +264,7 @@ function frame00() {
 
   var masterTimeline = gsap.timeline();
 
-  masterTimeline
-    .to(stage, 0.25, { opacity: 1 }, 'master+=.25')
-    .call(frame01, null, 'master+=.5')
-    .call(frame02, null, 'master+=2.5')
-    .call(resolve, null, 'master+=6');
+  masterTimeline.to(stage, 0.25, { opacity: 1 }, 'master+=.25').call(frame01, null, 'master+=.5').call(frame02, null, 'master+=2.5').call(resolve, null, 'master+=6');
 
   bannerDuration = 7.5;
 }
@@ -291,9 +287,7 @@ function frame01() {
 function frame02() {
   var fr3 = gsap.timeline();
 
-  fr3
-    .to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2')
-    .to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
+  fr3.to(copy1, easeSpeed, { opacity: 0, ease: easeStyle }, 'fr2').to(copy2, easeSpeed, { opacity: 1, ease: easeStyle }, 'fr2+=.5');
 }
 
 function resolve() {
